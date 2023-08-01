@@ -5,7 +5,7 @@ function App() {
  
   return (
     <>
-     
+     <h1>Teacher's dashboard</h1>
     </>
   )
 }
