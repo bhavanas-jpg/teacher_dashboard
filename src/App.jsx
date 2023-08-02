@@ -1,13 +1,12 @@
-import { useState } from 'react'
-import './App.css'
+import './App.css';
+import AppLayout from './components/layouts/app-layout/AppLayout';
 
 function App() {
- 
   return (
     <>
-     <h1>Teacher's dashboard</h1>
+      <AppLayout />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
