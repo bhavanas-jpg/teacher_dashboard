@@ -6,7 +6,9 @@ import Navbar from './components/Navbar'
 import Attendance from './pages/Attendance'
 import Assignments from './pages/Assignments'
 import AllStudents from './pages/AllStudents'
-import LessonPlan from './pages/LessonPlan'
+import LessonPlan from './pages/LessonPlan';
+import * as d3 from "d3";
+import AddLessonPlan from './components/AddLessonPlan'
 
 function App() {
  
@@ -17,7 +19,7 @@ function App() {
       <Route path="/attendance" element={<Attendance />}/>
       <Route path="/assignments" element={<Assignments />}/>
       <Route path="/allStudents" element={<AllStudents />}/>
-      <Route path="/lessonPlan" element={<LessonPlan />}/>
+      <Route path="/lessonPlan" element={<AddLessonPlan />}/>
      </Routes>
     </>
   )

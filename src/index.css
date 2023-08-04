@@ -82,6 +82,11 @@ justify-content: space-between;
   /* border: 2px solid red; */
   display: flex;
   justify-content: center;
+  flex-direction: column;
+}
+.right>div{
+  width: 100%;
+    padding: 0.8rem;
 }
 .profile-picture {
   width: 3.7rem;
@@ -193,4 +198,57 @@ img {
   width: 40px;
   height: 40px;
   color: var(--color-white);
+}
+/***progress bar ***/
+.progress-container {
+  position: relative;
+}
+
+.progress-bar {
+}
+
+.progress-bar:before {
+  content: "0";
+  position: absolute;
+  left: 2px;
+  bottom: 60px;
+  font-size: 12px;
+  color: rgba(98, 107, 114, 1);
+}
+
+.progress-bar:after {
+  content: "600";
+  position: absolute;
+  right: -6px;
+  bottom: 60px;
+  font-size: 12px;
+  color: rgba(98, 107, 114, 1);
+}
+
+.widget {
+  padding: 25px;
+  margin: 0 auto;
+  width: 150px;
+  margin-top: 25px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.points {
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: 60px;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgba(98, 107, 114, 1);
+  font-size: 12px;
+}
+.lesson__plan input{
+  padding: 10px;
+  border: 1px solid var(--color-grey);
+  border-radius: 5px;
 }

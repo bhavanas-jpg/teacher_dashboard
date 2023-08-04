@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from '../components/Navbar'
 import AttendanceOverview from '../components/AttendanceOverview'
 import MySchedule from '../components/MySchedule'
@@ -7,8 +7,23 @@ import TodoList from '../components/TodoList'
 import StudyMaterial from '../components/StudyMaterial'
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
+import ProgressBar from '../components/ProgressBar'
+import LoyaltyChart from '../components/LoyaltyChart'
 
 const Dashboard = () => {
+
+    const [currentDate, setCurrentDate] = useState(new Date());
+    const points = 450;
+  const maxPoints = 600;
+  
+    const handleDateChange = (date) => {
+      setCurrentDate(date);
+    };
+    const formatDate = (date) => {
+      const options = { day: 'numeric', month: 'short' };
+      return date.toLocaleDateString(undefined, options);
+    };
+
   return (
     
       <div className="container">
@@ -24,7 +39,7 @@ const Dashboard = () => {
       </div>
       <section className="middle">
        <h1 className="heading__var--1" >Teacher's Dashboard</h1>
-       <h2 className="heading__var--2">22 January</h2>
+       <h2 className="heading__var--2">{formatDate(currentDate)}</h2>
        <div className="dashboard__container">
         <div className="dashboard__content">
         <AttendanceOverview />
@@ -38,8 +53,13 @@ const Dashboard = () => {
        </div>
       </section>
       <div className="right">
+        <div>
+        <LoyaltyChart points={points} maxPoints={maxPoints} />
+        <ProgressBar />
+        </div>
+        
       <div>
-      <Calendar />
+      <Calendar  value={currentDate} onChange={handleDateChange}  />
       </div>
       </div>
       </div>
